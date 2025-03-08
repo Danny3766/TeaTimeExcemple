@@ -2,4 +2,33 @@
 # 這個 .gitignore 檔案由 Microsoft(R) Visual Studio 自動建立。
 ################################################################################
 
-/TeaTimeExample.csproj
+# 忽略 Visual Studio 產生的檔案
+.vs/
+*.user
+*.suo
+*.cache
+*.csproj.user
+*.vbproj.user
+*.dbmdl
+*.jfm
+
+# 忽略 bin 和 obj 目錄 (編譯產物)
+bin/
+obj/
+
+# 忽略 NuGet 套件
+packages/
+*.nupkg
+project.lock.json
+project.assets.json
+
+# 忽略編譯日誌
+msbuild.log
+*.tlog
+
+# 忽略 Rider/JetBrains 相關檔案
+.idea/
+*.sln.iml
+
+# 忽略 IIS Express 設定
+.vsconfig
