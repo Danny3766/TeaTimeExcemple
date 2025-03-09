@@ -21,8 +21,8 @@ public class ApplicationDbContext : DbContext
     {
         modelBuilder.Entity<CategoryModel>().HasData(
             new CategoryModel { Id = 1, Name = "茶飲", DisplayOrder = 1 },
-            new CategoryModel { Id = 1, Name = "水果茶", DisplayOrder = 2 },
-            new CategoryModel { Id = 1, Name = "咖啡", DisplayOrder = 3 }
+            new CategoryModel { Id = 2, Name = "水果茶", DisplayOrder = 2 },
+            new CategoryModel { Id = 3, Name = "咖啡", DisplayOrder = 3 }
             );
 
         base.OnModelCreating(modelBuilder);
