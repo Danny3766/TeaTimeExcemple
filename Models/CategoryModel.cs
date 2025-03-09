@@ -16,7 +16,7 @@ namespace TeaTimeExample.Models
         [DisplayName("類別名稱")]
         public string Name { get; set; }
 
-        [Range(0, 100)]
+        [Range(0, 100, ErrorMessage = "輸入的範圍要在 1-100 之間")]
         [DisplayName("顯示順序")]
         public int DisplayOrder { get; set; }
     }
