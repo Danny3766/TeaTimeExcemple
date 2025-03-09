@@ -54,7 +54,7 @@ namespace TeaTimeExample.Controllers
         }
 
         /// <summary>
-        /// 編輯類別
+        /// 編輯類別 - 表單頁面
         /// </summary>
         /// <returns></returns>
         public IActionResult Edit(int? id)
@@ -67,6 +67,20 @@ namespace TeaTimeExample.Controllers
             var categoryFromDb = _db.Categories.Find(id);
 
             return categoryFromDb is null ? NotFound() : View(categoryFromDb);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(CategoryModel category) 
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(category); // 若驗證失敗，回 Edit 表單頁面，並保留表單輸入的資料
+            }
+
+            _db.Categories.Update(category);
+            _db.SaveChanges();
+
+            return RedirectToAction(nameof(Index));
         }
     }
 }
