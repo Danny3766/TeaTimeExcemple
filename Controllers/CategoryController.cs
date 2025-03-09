@@ -42,10 +42,14 @@ namespace TeaTimeExample.Controllers
         [HttpPost]
         public IActionResult Create(CategoryModel category)
         {
-            _db.Categories.Add(category);
-            _db.SaveChanges();
+            if (ModelState.IsValid)
+            {
+                _db.Categories.Add(category);
+                _db.SaveChanges();
 
-            return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Index));
+            }
+            return View(category); // 若驗證失敗，回 Create 表單頁面，並保留表單輸入的資料
         }
     }
 }
