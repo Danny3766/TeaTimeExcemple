@@ -15,7 +15,7 @@ namespace TeaTimeExample.Models
         [DisplayName("類別名稱")]
         public string Name { get; set; }
 
-        [DisplayName("類別名稱")]
+        [DisplayName("顯示順序")]
         public int DisplayOrder { get; set; }
     }
 }
