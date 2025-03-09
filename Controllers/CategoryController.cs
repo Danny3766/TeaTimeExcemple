@@ -69,6 +69,11 @@ namespace TeaTimeExample.Controllers
             return categoryFromDb is null ? NotFound() : View(categoryFromDb);
         }
 
+        /// <summary>
+        /// 編輯類別 - 更新資料到 DB
+        /// </summary>
+        /// <param name="category"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Edit(CategoryModel category) 
         {
