@@ -5,10 +5,10 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-// 讀取 User Secrets
+// 讀取 User Secrets 的連線字串設定
 builder.Configuration.AddUserSecrets<Program>();
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-
+// 註冊 DbContext
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 
