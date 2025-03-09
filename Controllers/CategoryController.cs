@@ -50,6 +50,8 @@ namespace TeaTimeExample.Controllers
             _db.Categories.Add(category);
             _db.SaveChanges();
 
+            TempData["success"] = "類別新增成功!!!";
+
             return RedirectToAction(nameof(Index));
         }
 
