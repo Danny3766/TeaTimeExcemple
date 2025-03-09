@@ -87,6 +87,7 @@ namespace TeaTimeExample.Controllers
             _db.Categories.Update(category);
             _db.SaveChanges();
 
+            TempData["success"] = "類別更新成功!!!";
             return RedirectToAction(nameof(Index));
         }
 
@@ -125,6 +126,7 @@ namespace TeaTimeExample.Controllers
             _db.Categories.Remove(item);
             _db.SaveChanges();
 
+            TempData["success"] = "類別刪除成功!!!";
             return RedirectToAction(nameof(Index));
         }
     }
