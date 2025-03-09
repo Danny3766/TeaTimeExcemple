@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using TeaTimeExample.Models;
 
 namespace TeaTimeExample.Controllers
 {
@@ -24,5 +23,14 @@ namespace TeaTimeExample.Controllers
             var categoryList = _db.Categories.ToList();
             return View(categoryList);
         }
+
+        /// <summary>
+        /// 新增類別
+        /// </summary>
+        /// <returns></returns>
+        public IActionResult Create()
+        {
+            return View();
+        } 
     }
 }
