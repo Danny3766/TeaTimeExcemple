@@ -21,7 +21,8 @@ namespace TeaTimeExample.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var categoryList = _db.Categories.ToList();
+            return View(categoryList);
         }
     }
 }
