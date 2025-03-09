@@ -52,5 +52,21 @@ namespace TeaTimeExample.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+
+        /// <summary>
+        /// 編輯類別
+        /// </summary>
+        /// <returns></returns>
+        public IActionResult Edit(int? id)
+        {
+            if (id is null || id == 0)
+            {
+                return NotFound();
+            }
+
+            var categoryFromDb = _db.Categories.Find(id);
+
+            return categoryFromDb is null ? NotFound() : View(categoryFromDb);
+        }
     }
 }
