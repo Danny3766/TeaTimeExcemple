@@ -42,19 +42,15 @@ namespace TeaTimeExample.Controllers
         [HttpPost]
         public IActionResult Create(CategoryModel category)
         {
-            if (category.Name == category.DisplayOrder.ToString())
+            if (!ModelState.IsValid)
             {
-                ModelState.AddModelError("name", "類別名稱不能跟顯示順序一樣");
+                return View(category); // 若驗證失敗，回 Create 表單頁面，並保留表單輸入的資料
             }
 
-            if (ModelState.IsValid)
-            {
-                _db.Categories.Add(category);
-                _db.SaveChanges();
+            _db.Categories.Add(category);
+            _db.SaveChanges();
 
-                return RedirectToAction(nameof(Index));
-            }
-            return View(category); // 若驗證失敗，回 Create 表單頁面，並保留表單輸入的資料
+            return RedirectToAction(nameof(Index));
         }
     }
 }
