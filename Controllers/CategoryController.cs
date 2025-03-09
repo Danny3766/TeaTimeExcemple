@@ -1,6 +1,15 @@
-﻿namespace TeaTimeExample.Controllers
+﻿using Microsoft.AspNetCore.Mvc;
+
+namespace TeaTimeExample.Controllers
 {
-    public class CategoryController
+    /// <summary>
+    /// 類別清單 Controller
+    /// </summary>
+    public class CategoryController : Controller
     {
+        public IActionResult Index()
+        {
+            return View();
+        }
     }
 }
