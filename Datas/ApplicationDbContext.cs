@@ -9,5 +9,5 @@ public class ApplicationDbContext : DbContext
     }
 
     // 自定義的資料表：
-    public DbSet<CategoryModel> CategoryModel { get; set; }
+    
 }
